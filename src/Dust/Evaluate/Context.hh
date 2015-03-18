@@ -54,9 +54,9 @@ class Context
     /**
      * @param string $key
      * @param $value
-     * @return string
+     * @return mixed
      */
-    public function findInArrayAccess(string $key, $value): ?string {
+    public function findInArrayAccess(string $key, $value) {
         if((is_array($value) || $value instanceof \ArrayAccess) && isset($value[$key]))
             return $value[$key];
         else
