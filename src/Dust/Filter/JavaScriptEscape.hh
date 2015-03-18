@@ -11,9 +11,9 @@ class JavaScriptEscape implements Filter
 
     /**
      * @param $item
-     * @return oject
+     * @return mixed
      */
-    public function apply($item): object {
+    public function apply($item) {
         if (!is_string($item))
             return $item;
 

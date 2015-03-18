@@ -470,12 +470,12 @@ class Evaluator
     
     /**
      * @param \Dust\Evaluate\Context $ctx
-     * @param string $resolved
+     * @param mixed $resolved
      * @param \Dust\Evaluate\Chunk $chunk
      * @param \Dust\Evaluate\Section $section
      * @return string
      */
-    public function normalizeResolved(Context $ctx, ?string $resolved, Chunk $chunk, ?Ast\Section $section = NULL): ?string {
+    public function normalizeResolved(Context $ctx, $resolved, Chunk $chunk, ?Ast\Section $section = NULL) {
         $handledSpecial = true;
         while ($handledSpecial)
         {
