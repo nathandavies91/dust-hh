@@ -6,7 +6,7 @@ class JsonDecode implements Filter
 {
     /**
      * @param string $item
-     * @return
+     * @return string
      */
     public function apply($item): string {
         return json_decode($item);
