@@ -410,7 +410,7 @@ class Evaluator
      * @param \Dust\Ast\Section $section
      * @return array
      */
-    public function handleCallback(Context $ctx, $callback, Chunk $chunk, ?Ast\Section $section = NULL): array {
+    public function handleCallback(Context $ctx, $callback, Chunk $chunk, ?Ast\Section $section = NULL): Chunk {
         // Reset "this" on closures
         if ($callback instanceof \Closure)
         {
