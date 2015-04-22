@@ -1,6 +1,6 @@
 <?hh // strict
 
-namespace Dust\Evaluate
+namespace Dust\Evaluate;
 
 use Dust\Ast\Body;
 use Dust\Ast\Section;
