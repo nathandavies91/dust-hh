@@ -206,7 +206,7 @@ class Evaluator
             else
             {
                 // Apply filters in order...
-                $resolved = array_reduce($ref->filters, function ($prev, Filter $curr)
+                $resolved = array_reduce($ref->filters, function ($prev, Ast\Filter $curr)
                 {
                     if (array_key_exists($curr->key, $this->dust->filters))
                     {
