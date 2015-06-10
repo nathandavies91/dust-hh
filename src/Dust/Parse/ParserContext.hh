@@ -41,7 +41,7 @@ class ParserContext
     /**
      * @return object
      */
-    public function getCurrentLineAndCol(): object {
+    public function getCurrentLineAndCol() {
         return $this->getLineAndColFromOffset($this->offset);
     }
     
@@ -49,7 +49,7 @@ class ParserContext
      * @param int $offset
      * @return object
      */ 
-    public function getLineAndColFromOffset(int $offset): object {
+    public function getLineAndColFromOffset(int $offset) {
         $line = 0;
         $prev = -1;
         while (true)

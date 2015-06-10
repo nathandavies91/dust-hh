@@ -86,7 +86,7 @@ class Chunk
      * @param \Dust\Evaluate\Context $context
      * @return string
      */
-    public function render(Body $ast, Context $context): string {
+    public function render(Body $ast, Context $context): Chunk {
         $text = $this;
         
         if ($ast != NULL)
