@@ -13,11 +13,6 @@ class InlineLiteral extends InlinePart
      * @return string
      */
     public function __toString(): string {
-        $str = "";
-        
-        if (!empty($this->parts))
-            foreach ($this->parts as $value) $str .= $value;
-
-        return "\"" . $str . "\"";
+        return $this->value;
     }
 }

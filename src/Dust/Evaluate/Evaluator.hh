@@ -492,7 +492,7 @@ class Evaluator
                     else if ($value instanceof Ast\Special)
                         $newChunk = $this->evaluateSpecial($value, $ctx, $newChunk);
                     else
-                        $newChunk->write(strval($value));
+                        $newChunk->write((string)$value);
                 }
                 
                 $resolved = $newChunk->getOut();
