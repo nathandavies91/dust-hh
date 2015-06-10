@@ -5,7 +5,7 @@ namespace Dust\Evaluate;
 class State
 {
     /**
-     * @var string
+     * @var
      */
     public $value;
 

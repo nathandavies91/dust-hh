@@ -466,7 +466,7 @@ class Parser
 
             $ctx->offset++;
 
-            //different possible types...
+            // Different possible types...
             $numVal = $this->parseNumber($ctx);
             if ($numVal != NULL)
             {

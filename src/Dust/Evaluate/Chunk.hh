@@ -89,13 +89,13 @@ class Chunk
     public function render(Body $ast, Context $context): string {
         $text = $this;
         
-        if($ast != NULL)
+        if ($ast != NULL)
         {
             $text = $this->evaluator->evaluateBody($ast, $context, $this);
             if ($this->tapStack != NULL)
                 foreach ($this->tapStack as $value) $text->out = $value($text->out);
         }
-
+        
         return $text;
     }
     
