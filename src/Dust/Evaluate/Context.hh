@@ -106,13 +106,13 @@ class Context
     }
     
     /**
-     * @param \Dust\Evaluate\State $head
-     * @param string $index
+     * @param var $head
+     * @param var $index
      * @param int $length
      * @param int iterationCount
      * @return \Dust\Evaluate\Context
      */
-    public function push(State $head, ?string $index = NULL, ?int $length = NULL, ?int $iterationCount = NULL): Context {
+    public function push($head, $index = NULL, ?int $length = NULL, ?int $iterationCount = NULL): Context {
         $state = new State($head);
         
         if ($index !== NULL)

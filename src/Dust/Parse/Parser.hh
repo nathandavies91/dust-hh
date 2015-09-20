@@ -303,7 +303,6 @@ class Parser
         
         $ident->next = $this->parseIdentifier($ctx, false);
         $ctx->commitTransaction();
-
         return $ident;
     }
     
