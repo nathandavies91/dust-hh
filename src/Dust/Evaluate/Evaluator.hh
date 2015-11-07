@@ -262,7 +262,7 @@ class Evaluator
             
             // Do we have the helper?
             if(!isset($this->dust->helpers[$section->identifier->key]))
-                $this->error($section->identifier, "Unable to find helper");
+                $this->error($section->identifier, "Unable to find helper: " . $section->identifier->key);
             
             $helper = $this->dust->helpers[$section->identifier->key];
             
