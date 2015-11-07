@@ -8,8 +8,6 @@ use Dust\Parse\Parser;
 
 class Dust implements \Serializable
 {
-    const string FILE_EXTENSION = ".dust";
-
     /**
      * @var \Dust\Parse\Parser
      */
@@ -38,12 +36,18 @@ class Dust implements \Serializable
      * @var object
      */
     public $autoloaderOverride;
+    
+    /**
+     * @var string
+     */
+    private string
+        $extension = "dust";
 
     /**
      * @param Parser $parser
      * @param Evaluator $evaluator
      */
-    public function __construct(?Parser $parser = NULL, ?Evaluator $evaluator = NULL): void {
+    public function __construct(?Parser $parser = NULL, ?Evaluator $evaluator = NULL, $options = null): void {
         $this->parser = ($parser !== NULL) ? $parser : new Parser();
         $this->evaluator = ($evaluator !== NULL) ? $evaluator : new Evaluate\Evaluator($this);
 
@@ -73,6 +77,12 @@ class Dust implements \Serializable
         ];
 
         $this->automaticFilters = [$this->filters["h"]];
+        
+        // Adjust the file type extension
+        if (is_array($options) && isset($options["extension"])) {
+            $extension = $options["extension"];
+            $this->extension = $extension{0} === "." ? substr($extension, 1) : $extension;
+        }
     }
 
     /**
@@ -179,8 +189,8 @@ class Dust implements \Serializable
      */
     public function resolveAbsoluteDustFilePath(string $path, ?string $basePath = NULL): ?string {
         // Add extension if necessary
-        if (substr_compare($path, self::FILE_EXTENSION, -5, 5) !== 0)
-            $path .= self::FILE_EXTENSION;
+        if (end(explode('.', $path)) !== $this->extension)
+            $path .= '.' . $this->extension;
 
         if ($basePath != NULL && ($possible = realpath($basePath . "/" . $path)) !== false)
             return $possible;
