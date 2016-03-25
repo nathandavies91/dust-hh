@@ -4,5 +4,5 @@ namespace Dust\Filter;
 
 interface Filter
 {
-    public function apply($item);
+	public function apply($item);
 }

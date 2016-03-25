@@ -4,15 +4,15 @@ namespace Dust\Ast;
 
 class NumericParameter extends Parameter
 {
-    /**
-     * @var string
-     */
-    public string $value;
+	/**
+	 * @var string
+	 */
+	public string $value;
 
-    /**
-     * @return string
-     */
-    public function __toString(): string {
-        return $this->key . "=" . $this->value;
-    }
+	/**
+	 * @return string
+	 */
+	public function __toString(): string {
+		return $this->key . "=" . $this->value;
+	}
 }

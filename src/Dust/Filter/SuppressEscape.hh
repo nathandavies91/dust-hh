@@ -4,11 +4,11 @@ namespace Dust\Filter;
 
 class SuppressEscape implements Filter
 {
-    /**
-     * @param $item
-     * @return string
-     */
-    public function apply($item): string {
-        return $item;
-    }
+	/**
+	 * @param $item
+	 * @return string
+	 */
+	public function apply($item): string {
+		return $item;
+	}
 }

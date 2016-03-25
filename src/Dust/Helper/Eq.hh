@@ -4,12 +4,12 @@ namespace Dust\Helper;
 
 class Eq extends Comparison
 {
-    /**
-     * @param string $key
-     * @param string $value
-     * @return bool
-     */
-    public function isValid(string $key, string $value): bool {
-        return $key == $value;
-    }
+	/**
+	 * @param string $key
+	 * @param string $value
+	 * @return bool
+	 */
+	public function isValid(string $key, string $value): bool {
+		return $key == $value;
+	}
 }
