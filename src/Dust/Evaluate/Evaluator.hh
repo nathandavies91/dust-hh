@@ -478,7 +478,7 @@ class Evaluator
 		$handledSpecial = true;
 		while ($handledSpecial)
 		{
-			if (is_callable($resolved) && !is_string($resolved))
+			if ($resolved instanceof \Closure)
 				$resolved = $this->handleCallback($ctx, $resolved, $chunk, $section);
 			else if ($resolved instanceof Ast\Inline)
 			{
