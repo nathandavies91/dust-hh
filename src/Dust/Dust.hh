@@ -70,6 +70,7 @@ class Dust implements \Serializable
 			"lte"         => new Helper\Lte(),
 			"gt"          => new Helper\Gt(),
 			"gte"         => new Helper\Gte(),
+			"ne"          => new Helper\Ne(),
 			"default"     => new Helper\DefaultHelper(),
 			"sep"         => new Helper\Sep(),
 			"size"        => new Helper\Size(),
